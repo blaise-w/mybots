@@ -1,11 +1,9 @@
-import pybullet as p
-import time
+from simulation import SIMULATION
+import sys
 
-physicsClient = p.connect(p.GUI)
+directOrGUI = sys.argv[1]
+solutionID = sys.argv[2]
 
-for i in range(1000):
-    p.stepSimulation()
-    time.sleep(1/60)
-    print(i)
-
-p.disconnect()
+simulation = SIMULATION(directOrGUI, solutionID)
+simulation.Run()
+simulation.Get_Fitness(solutionID)
