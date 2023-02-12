@@ -1,6 +1,6 @@
 <sdf>
     <model name="Sphere">
-        <pose>-3 0 0.5 0 0 0 </pose>
+        <pose>-300 0 0.5 0 0 0 </pose>
         <link name="Sphere">
             <inertial>
                 <mass>1.0</mass>
@@ -30,7 +30,7 @@
         </link>
     </model>
     <model name="Goal">
-        <pose>-10 0 1 0 0 0 </pose>
+        <pose>-100 0 1 0 0 0 </pose>
         <link name="Goal">
             <inertial>
                 <mass>1.0</mass>

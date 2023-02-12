@@ -10,6 +10,7 @@ from sensor import SENSOR
 
 class SIMULATION:
     def __init__(self, directOrGUI, solutionID):
+        directOrGUI = "GUI"
         if directOrGUI == "DIRECT":
             self.physicsClient = p.connect(p.DIRECT)
         else:
@@ -23,7 +24,7 @@ class SIMULATION:
         self.robot.Get_Fitness(solutionID)
 
     def Run(self):
-        for i in range(1000): # "The FOR LOOP"
+        for i in range(50): # "The FOR LOOP"
             p.stepSimulation()
             self.robot.Sense(i)
             self.robot.Think()
