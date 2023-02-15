@@ -67,4 +67,6 @@ The end result are these screenshots:
 
 A video of the random 3d creatures flailing around can be found here: https://www.youtube.com/watch?v=HFQinGk2pSI
 
-
+Resources:
+https://www.reddit.com/r/ludobots/
+https://www.thunderheadeng.com/pyrosim
