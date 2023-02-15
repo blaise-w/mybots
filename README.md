@@ -53,6 +53,12 @@ After i == 0, I had to take into account not only the next direction, but also t
 
 Other significant changes I made included the simulation file (removing the side bars in the display), the constants, and the motor file (these were to allow the robot to properly move with all the new and interlocking joints.
 
+A short summary of the overall potential:
+
+Any body type is possible as I went with a completely random approach. A shortcoming of this approach is that, despite my efforts it is still possible for limbs to overlap. Stopping this would likely require completely redoing my approach to body generation or keeping track of which 3d spaces are occupied
+
+When it comes to the brain, motors are only controlled by the sensors they are adjacent to. I am unsure of what types of gaits these creatures will be able to develop as they simply jerk around randomly. My guess is that sensors connected to motors will simply act as legs to push the creature forward.
+
 The end result are these screenshots:
 
 <img width="252" alt="Screen Shot 2023-02-14 at 6 59 19 PM" src="https://user-images.githubusercontent.com/93502887/218897857-b8ccb09a-6b05-4c50-90ea-5b21e6462cbd.png">
