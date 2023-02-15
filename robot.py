@@ -48,14 +48,14 @@ class ROBOT:
 
 
     def Get_Fitness(self, solutionID):
-        #print(self.world.ballId)
-        ballPositionAndOrientation = p.getBasePositionAndOrientation(self.world.ballId[0])
-        ballPosition = ballPositionAndOrientation[0]
-        bxPosition = ballPosition[0]
-        #zPosition = boxPosition[2]
-        wallPositionAndOrientation = p.getBasePositionAndOrientation(self.world.ballId[1])
-        wallPosition = ballPositionAndOrientation[0]
-        wzPosition = wallPosition[2]
+        # #print(self.world.ballId)
+        # ballPositionAndOrientation = p.getBasePositionAndOrientation(self.world.ballId[0])
+        # ballPosition = ballPositionAndOrientation[0]
+        # bxPosition = ballPosition[0]
+        # #zPosition = boxPosition[2]
+        # wallPositionAndOrientation = p.getBasePositionAndOrientation(self.world.ballId[1])
+        # wallPosition = ballPositionAndOrientation[0]
+        # wzPosition = wallPosition[2]
 
         basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
         basePosition = basePositionAndOrientation[0]

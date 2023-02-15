@@ -10,15 +10,17 @@ phaseOffsetBL = -20
 amplitudeFrontleg = pi/4
 frequencyFrontleg = 5
 phaseOffsetFrontleg = -20
-numberOfGenerations = 10
+numberOfGenerations = 15
 populationSize = 1
 
-# snake length doesnt include head
-snake_length = random.randint(1, 10)
-numSensorNeurons = random.randint(1, 10)
-numMotorNeurons = snake_length
+
+numLinks = 4
+numSensorNeurons = random.randint(3, numLinks)
+numMotorNeurons = numSensorNeurons - 1
 sensors = []
 for i in range(numSensorNeurons):
-    r = random.randint(0, snake_length + 1)
+    r = random.randint(0, numLinks)
     sensors.append(r)
 motorJointRange = 50000
+
+
