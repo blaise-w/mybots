@@ -27,3 +27,38 @@ Within my create_brain() function, I used the list of which links would be senso
 Within my create_body() function, I looped over the length of the snake to create random links. I checked with c.sensors to determine the color of the link.
 
 Other edited files were to modify joint angles and motor power to allow the snake to move, as well as allowing for color to be passed in create_link().
+
+
+
+
+2/14: Random 3D Creatures
+
+Again, I mainly made modifications in the solutions file.
+
+This time I was modifying the code I wrote earlier this week to generate in 3 dimensions.
+
+This pretty much only affected my Create_Body() function. I continued using a loop over the number of segments in the creature's body. But this time, I chose a direction to add in using a random number 1-5. This corresponded to -y, +y, -x, +x, and +z. I did not generate in the -z direction because I didn't want to deal with sections of the body going below the floor.
+
+Just like with the snake, I would add a link one half the link-size in the direction we chose.
+
+I wanted to choose a random place on the body to add the next link, so I used random.randint() againt to get a random link.
+
+I had trouble with stopping links from generating inside eachother, so I implemented a simple loop that chose a new direction to add in if there was already a link coming out of the chosen link in that direction. If the link was completely full, I chose another link to add to.
+
+Addtionally, I had a problem with adding in one direction (e.g. positive x) and immediately adding a link from the new link in the opposite direction (e.g. negative x from the link we just added). I solved this by choosing a different direction if opposite directions were immediately chosen.
+
+The most difficult part of generating creatures in 3D was the joint placement. With the first join being 100% absolute, I wrote an if statement for each of the five possible directions to determine where the joint would go. This was the easy part. 
+
+After i == 0, I had to take into account not only the next direction, but also the current direction. The result was 5 if statments for each of five directions, each with 5 if statements inside them. There may have been a more efficient way to do this. 
+
+Other significant changes I made included the simulation file (removing the side bars in the display), the constants, and the motor file (these were to allow the robot to properly move with all the new and interlocking joints.
+
+The end result are these screenshots:
+
+<img width="252" alt="Screen Shot 2023-02-14 at 6 59 19 PM" src="https://user-images.githubusercontent.com/93502887/218897857-b8ccb09a-6b05-4c50-90ea-5b21e6462cbd.png">
+
+<img width="311" alt="Screen Shot 2023-02-14 at 6 58 59 PM" src="https://user-images.githubusercontent.com/93502887/218898025-4b8f2ae6-3657-4118-99f3-014f820ad1d6.png">
+
+A video of the random 3d creatures flailing around can be found here: https://www.youtube.com/watch?v=HFQinGk2pSI
+
+
