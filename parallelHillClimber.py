@@ -2,6 +2,8 @@ import solution
 import constants as c
 import copy
 import os
+import matplotlib.pyplot as plt
+import numpy
 
 class PARALLEL_HILL_CLIMBER:
     def __init__(self):
@@ -21,6 +23,8 @@ class PARALLEL_HILL_CLIMBER:
             #print("\ngeneration: " + str(currentGeneration))
             self.Evolve_For_One_Generation(currentGeneration)
 
+      
+
     def Evolve_For_One_Generation(self, currentGeneration):
         self.Spawn()
         self.Mutate()
@@ -31,7 +35,9 @@ class PARALLEL_HILL_CLIMBER:
         # else:
         #     self.child.Evaluate("DIRECT")
         # print("\n" + str(self.parent.fitness) + " " + str(self.child.fitness))
+
         self.Select()
+        
 
     def Spawn(self):
         self.children = {}
@@ -61,7 +67,7 @@ class PARALLEL_HILL_CLIMBER:
                 lowest = self.parents[key].fitness
                 best = self.parents[key]
         #print(best.legweights)
-        best.Start_Simulation("GUI")
+        best.Start_Simulation("GUI", True)
 
     def Evaluate(self, solutions):
         for parent in solutions:

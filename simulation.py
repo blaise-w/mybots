@@ -10,10 +10,12 @@ from sensor import SENSOR
 
 class SIMULATION:
     def __init__(self, directOrGUI, solutionID):
+        #directOrGUI = "GUI"
         if directOrGUI == "DIRECT":
             self.physicsClient = p.connect(p.DIRECT)
         else:
             self.physicsClient = p.connect(p.GUI)
+            p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0, 0, -100.8)
         #self.world = WORLD()
@@ -22,7 +24,7 @@ class SIMULATION:
     def Get_Fitness(self, solutionID):
         self.robot.Get_Fitness(solutionID)
 
-    def Run(self):
+    def Run(self, last):
         for i in range(1000): # "The FOR LOOP"
             p.stepSimulation()
             self.robot.Sense(i)
@@ -46,7 +48,8 @@ class SIMULATION:
 ##                                        targetPosition = targetAnglesFL[i],
 ##                                        maxForce = 500)
 ##                
-            time.sleep(1/500)
+            if last: time.sleep(1/50)
+            
             #print(i)
 
     def __del__(self):

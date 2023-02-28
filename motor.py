@@ -20,7 +20,7 @@ class MOTOR:
                                     jointName = self.jointName,
                                     controlMode = p.POSITION_CONTROL,
                                     targetPosition = desiredAngle,
-                                    maxForce = 500)
+                                    maxForce = 1000)
         
 ##            pyrosim.Set_Motor_For_Joint(bodyIndex = robotId,
 ##                                        jointName = "Torso_BackLeg",
