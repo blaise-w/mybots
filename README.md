@@ -70,3 +70,27 @@ A video of the random 3d creatures flailing around can be found here: https://ww
 Resources:
 https://www.reddit.com/r/ludobots/
 https://www.thunderheadeng.com/pyrosim
+
+
+
+2/27 Implementing Body Mutations to Evolve in Parallel Hill Climber
+
+Most of my modifications happened in the solution.py file and the parallelHillClimber.py file
+
+I planned to modify my body structure in a similar way to how the brain is modified (using a self.weights matrix).
+
+I noticed that in my solution.py Create_Body() function, I was simply using a list of random values to determine how the body generates.
+
+Instead of generating these values in-place, I would generate them in the init function of the solution class. This ended up becoming three different lists of random values: self.sizeAndAxis, self.directions, and self.adds. These hold the random numbers responsible for the size and axis of each joint, the direction they are placed in, and where they are added, respectively.
+
+Then I modified the Mutate() function to randomly modify one value in one of these lists each time. This means it is possible for a bot to mutate in joint size, joint axis, the direction the joint is added in, and the place on the body the joint is added too. I did not need to modify the create_brain function at all.
+
+Similarly to how the brain evolves by mutating one synapse at a time, the body mutates one aspect at a time. If the fitness of the child is greater than that of the parent, this trait will be passed on. My bodies did not gain or remove limbs as I ran into a problem that the bots would simply add parts early on rather than evolve to move. This is something I could fix in later assignments.
+
+I also made a small modification to the Run() function allowing an input of whether it was called by Show_Best() or not. This allowed me to remove time.sleep() for generations running without the GUI to speed up the evolution process.
+
+A diagram of how bodies are mutated:
+![102F9B7D-E184-4F14-99A6-ACBEC062031A](https://user-images.githubusercontent.com/93502887/221755905-fac64be8-079c-4704-a5a5-0ddeb7b6ed7e.jpeg)
+
+
+
