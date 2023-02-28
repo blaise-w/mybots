@@ -10,17 +10,17 @@ phaseOffsetBL = -20
 amplitudeFrontleg = pi/4
 frequencyFrontleg = 5
 phaseOffsetFrontleg = -20
-numberOfGenerations = 15
-populationSize = 1
+numberOfGenerations = 100
+populationSize = 5
 
 
 numLinks = 4
-numSensorNeurons = random.randint(3, numLinks)
+numSensorNeurons = random.randint(2, numLinks - 1)
 numMotorNeurons = numSensorNeurons - 1
 sensors = []
 for i in range(numSensorNeurons):
     r = random.randint(0, numLinks)
     sensors.append(r)
-motorJointRange = 50000
+motorJointRange = 2
 
 

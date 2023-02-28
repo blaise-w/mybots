@@ -9,6 +9,10 @@ class SOLUTION:
     def __init__(self, nextAvailableID):
         self.myID = nextAvailableID
         self.weights = numpy.random.rand(c.numSensorNeurons,c.numMotorNeurons) * 2 - 1
+        random.seed(2)
+        self.sizeAndAxis = [random.random() for i in range(21)]
+        self.directions = [random.randint(1, 5) for i in range(4)]
+        self.adds = [random.randint(0, i) for i in range(3)]
 
     def Evaluate(self, directOrGUI):
         self.Create_Body()
@@ -23,11 +27,11 @@ class SOLUTION:
         print(self.fitness)
         f.close
 
-    def Start_Simulation(self, directOrGUI):
-        self.Create_Body()
+    def Start_Simulation(self, directOrGUI, last=False):
+        self.Create_Body(self.myID)
         self.Create_Brain(self.myID)
         self.Create_World()
-        os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " &")
+        os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " " + str(last) + " &")
 
     def Wait_For_Simulation_To_End(self):
         while not os.path.exists("fitness" + str(self.myID) + ".txt"):
@@ -44,20 +48,32 @@ class SOLUTION:
         randomRow = random.randint(0, c.numSensorNeurons -1)
         randomColumn = random.randint(0, c.numMotorNeurons - 1)
         self.weights[randomRow,randomColumn] = random.random() * 2 - 1
-        
-        
+        r = random.randint(1, 3)
+        if r == 1:
+            index = random.randint(0, 20)
+            self.sizeAndAxis[index] = random.random()
+        elif r == 2:
+            index = random.randint(0, 3)
+            self.directions[index] = random.randint(1, 5)
+        else:
+            index = random.randint(0, 2)
+            self.adds[index] = random.randint(0, index)
+           
 
-    def Create_Body(self):
+    def Create_Body(self, ID):
         #print()
         #print("Create Body")
         # How to stop from building inside itself?
         #print(self.legweights)
         length = c.numLinks
-        pyrosim.Start_URDF("body.urdf")
+        pyrosim.Start_URDF("body" + str(ID) + ".urdf")
 
         # choose side to add to
         # 1 -y 2 +y 3 -x 4 +x 5 +z
-        nextDirection = random.randint(1, 5)
+        nextDirection = self.directions[0]
+        directionsIndex = 1
+
+        sizeAndAxisIndex = 0
         
         linkSizes = {}
         self.children = {}
@@ -69,17 +85,18 @@ class SOLUTION:
         for i in range(0, length):
             #print(i)
             direction = nextDirection
-            nextDirection = random.randint(1, 5)
-
 
             # add random axis later (this also depends on where we add it)
             # and other joint types
             # adjust starting z height
 
-            save_x = random.random()
-            save_y = random.random()
-            save_z = random.random()
+
+            save_x = self.sizeAndAxis[sizeAndAxisIndex]
+            save_y = self.sizeAndAxis[sizeAndAxisIndex + 1]
+            save_z = self.sizeAndAxis[sizeAndAxisIndex + 2]
             size = [save_x,save_y,save_z]
+
+            sizeAndAxisIndex += 3
             # save_x = 1
             # save_y = 1
             # save_z = 1
@@ -87,6 +104,7 @@ class SOLUTION:
 
             color = "Blue"
             if i in c.sensors: color = "Green"
+            # can add a change to c.sensors in mutate
 
             name = "Link" + str(i)
 
@@ -115,7 +133,7 @@ class SOLUTION:
                 pyrosim.Send_Cube(name=name, pos=pos, size=size, color=color)
  
             # +z
-            elif direction == 5:
+            else:
                 pos=[0,0,save_z/2] 
                 pyrosim.Send_Cube(name=name, pos=pos, size=size, color=color)
 
@@ -125,8 +143,10 @@ class SOLUTION:
             linkSizes[i] = size
                
             if i == length - 1: continue
+            nextDirection = self.directions[directionsIndex]
+            directionsIndex += 1
 
-            link = random.randint(i, i)
+            link = self.adds[i]
             linkName = "Link" + str(link)
 
             # get a direction that isnt taken
@@ -158,70 +178,70 @@ class SOLUTION:
             if i == 0:
                 if nextDirection == 1:
                     relPositions[link] = [0,-0.5*linkSizes[link][1],0]
-                if nextDirection == 2:
+                elif nextDirection == 2:
                     relPositions[link] = [0,0.5*linkSizes[link][1],0]
-                if nextDirection == 3:
+                elif nextDirection == 3:
                     relPositions[link] = [-0.5*linkSizes[link][0],0,0]
-                if nextDirection == 4:
+                elif nextDirection == 4:
                     relPositions[link] = [0.5*linkSizes[link][0],0,0]
-                if nextDirection == 5:
+                else:
                     relPositions[link] = [0,0,0.5*linkSizes[link][2]]
             else:
                 if nextDirection == 1:
                     if direction == 1:
                         relPositions[link] = [0,-linkSizes[link][1],0]
-                    if direction == 2:
+                    elif direction == 2:
                         relPositions[link] = [0,0,0]
-                    if direction == 3:
+                    elif direction == 3:
                         relPositions[link] = [-0.5*linkSizes[link][0],-0.5*linkSizes[link][1],0]
-                    if direction == 4:
+                    elif direction == 4:
                         relPositions[link] = [0.5*linkSizes[link][0],-0.5*linkSizes[link][1],0]
-                    if direction == 5:
+                    else:
                         relPositions[link] = [0,-0.5*linkSizes[link][1],0.5*linkSizes[link][2]]
-                if nextDirection == 2:
+                elif nextDirection == 2:
                     if direction == 1:
                         relPositions[link] = [0,0,0]
-                    if direction == 2:
+                    elif direction == 2:
                         relPositions[link] = [0,linkSizes[link][1],0]
-                    if direction == 3:
+                    elif direction == 3:
                         relPositions[link] = [-0.5*linkSizes[link][0],0.5*linkSizes[link][1],0]
-                    if direction == 4:
+                    elif direction == 4:
                         relPositions[link] = [0.5*linkSizes[link][0],0.5*linkSizes[link][1],0]
-                    if direction == 5:
+                    else:
                         relPositions[link] = [0,0.5*linkSizes[link][1],0.5*linkSizes[link][2]]
-                if nextDirection == 3:
+                elif nextDirection == 3:
                     if direction == 1:
                         relPositions[link] = [-0.5*linkSizes[link][0],-0.5*linkSizes[link][1],0]
-                    if direction == 2:
+                    elif direction == 2:
                         relPositions[link] = [-0.5*linkSizes[link][0],0.5*linkSizes[link][1],0]
-                    if direction == 3:
+                    elif direction == 3:
                         relPositions[link] = [-linkSizes[link][0],0,0]
-                    if direction == 4:
+                    elif direction == 4:
                         relPositions[link] = [0,0,0]
-                    if direction == 5:
+                    else:
                         relPositions[link] = [-0.5*linkSizes[link][0],0,0.5*linkSizes[link][2]]
-                if nextDirection == 4:
+                elif nextDirection == 4:
                     if direction == 1:
                         relPositions[link] = [0.5*linkSizes[link][0],-0.5*linkSizes[link][1],0]
-                    if direction == 2:
+                    elif direction == 2:
                         relPositions[link] = [0.5*linkSizes[link][0],0.5*linkSizes[link][1],0]
-                    if direction == 3:
+                    elif direction == 3:
                         relPositions[link] = [0,0,0]
-                    if direction == 4:
+                    elif direction == 4:
                         relPositions[link] = [linkSizes[link][0],0,0]
-                    if direction == 5:
+                    else:
                         relPositions[link] = [0.5*linkSizes[link][0],0,0.5*linkSizes[link][2]]
-                if nextDirection == 5:
+                else:
                     # need to figure out a way to make this work for different sizes
                     if direction == 1:
                         relPositions[link] = [0,-0.5*linkSizes[link][1],0.5*linkSizes[link][2]]
-                    if direction == 2:
+                    elif direction == 2:
                         relPositions[link] = [0,0.5*linkSizes[link][1],0.5*linkSizes[link][2]]
-                    if direction == 3:
+                    elif direction == 3:
                         relPositions[link] = [-0.5*linkSizes[link][0],0,0.5*linkSizes[link][2]]
-                    if direction == 4:
+                    elif direction == 4:
                         relPositions[link] = [0.5*linkSizes[link][0],0,0.5*linkSizes[link][2]]
-                    if direction == 5:
+                    else:
                         relPositions[link] = [0,0,linkSizes[link][2]]
 
             #print("rp")
@@ -232,8 +252,8 @@ class SOLUTION:
             else:
                 self.children[link] = [i+1]
 
-            jointAxis = str(random.random()) + " " + str(random.random()) + " " + str(random.random())
-            
+            jointAxis = str(self.sizeAndAxis[sizeAndAxisIndex]) + " " + str(self.sizeAndAxis[sizeAndAxisIndex] + 1) + " " + str(self.sizeAndAxis[sizeAndAxisIndex] + 2)
+            sizeAndAxisIndex += 3
             pyrosim.Send_Joint(name = linkName + "_Link" + str(i+1), parent = linkName, child = "Link" + str(i+1), type = "revolute", position= relPositions[link], jointAxis = jointAxis)
         
         pyrosim.End()

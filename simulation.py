@@ -10,7 +10,7 @@ from sensor import SENSOR
 
 class SIMULATION:
     def __init__(self, directOrGUI, solutionID):
-        directOrGUI = "GUI"
+        #directOrGUI = "GUI"
         if directOrGUI == "DIRECT":
             self.physicsClient = p.connect(p.DIRECT)
         else:
@@ -24,8 +24,8 @@ class SIMULATION:
     def Get_Fitness(self, solutionID):
         self.robot.Get_Fitness(solutionID)
 
-    def Run(self):
-        for i in range(500): # "The FOR LOOP"
+    def Run(self, last):
+        for i in range(1000): # "The FOR LOOP"
             p.stepSimulation()
             self.robot.Sense(i)
             self.robot.Think()
@@ -48,7 +48,8 @@ class SIMULATION:
 ##                                        targetPosition = targetAnglesFL[i],
 ##                                        maxForce = 500)
 ##                
-            time.sleep(1/500)
+            if last: time.sleep(1/50)
+            
             #print(i)
 
     def __del__(self):

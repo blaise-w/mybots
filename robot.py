@@ -39,12 +39,14 @@ class ROBOT:
     def __init__(self, solutionID):
         self.world = WORLD()
         self.motors = {}
-        self.robotId = p.loadURDF("body.urdf")
+        self.robotId = p.loadURDF("body" + str(solutionID) + ".urdf")
         pyrosim.Prepare_To_Simulate(self.robotId)
         self.Prepare_To_Sense()
         self.Prepare_To_Act()
         self.nn = NEURAL_NETWORK("brain" + str(solutionID) + ".nndf")
+        #exit()
         os.system("rm brain" + str(solutionID) + ".nndf")
+        os.system("rm body" + str(solutionID) + ".urdf")
 
 
     def Get_Fitness(self, solutionID):
@@ -63,6 +65,6 @@ class ROBOT:
         yPosition = basePosition[1]
         f = open("tmp" + str(solutionID) + ".txt", "w")
         #f.write(str((xPosition+bxPosition)/wzPosition))
-        f.write(str(yPosition))
+        f.write(str(xPosition))
         f.close()
         os.system("mv " + "tmp" + str(solutionID) + ".txt" " fitness" + str(solutionID) + ".txt")
