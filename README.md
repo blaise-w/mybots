@@ -20,7 +20,6 @@ To generate the initial population of robots, we use a randomization process tha
 
 <img width="646" alt="Screen Shot 2023-03-13 at 11 40 09 PM" src="https://user-images.githubusercontent.com/93502887/224894926-b3bbc2eb-82ed-43a0-a98a-1dc2e9306ad5.png">
 
-
 Sensor neurons feed information to the brain, a neural network that controls its movements. To generate the initial population of neural networks, we use a randomization process that creates a variety of connection weights. The brain relays information to the motor neurons, which fire to change the angle of the limb, allowing for the potential for movement. The brain is evolved by randomly changing weights in each generation, which, as in the body, are maintained in the population if they lead to an increase in fitness. This process runs concurrently with evolutions to the body.
 
 After generating the initial population, we introduce genetic variation by mutating each robot's body. We do this by randomly changing a single value of the body parameters for each member of the population. A given mutation can change the size of a joint, the axis it rotates on, where it is placed, and the direction it is placed in. If this introduces new variations in body structure that lead to improved locomotion, the mutation remains in the population, otherwise no changes are made.
@@ -36,6 +35,11 @@ At the heart of this project is the evolutionary algorithm, which is a process i
 My Experiment
 
 The way that robot bodies were mutated was by modifying a random value among three differents lists of random numbers. These numbers would then be used to generate the body of a given robot. The three different lists correspond to the size and axis of each limb, the directions each limb would be placed in, and where on the body each limb was placed. This led to three different possible types of mutations for a given robot. They were grouped this way simply for coding convenience, but it still raised the question-- how does the type of mutation affect the ability of a given population to achieve locomotion?
+
+<img width="678" alt="Screen Shot 2023-03-13 at 11 43 29 PM" src="https://user-images.githubusercontent.com/93502887/224895399-b1bd907a-4317-4390-8b95-f5a9168cff13.png">
+
+<img width="579" alt="Screen Shot 2023-03-13 at 11 44 17 PM" src="https://user-images.githubusercontent.com/93502887/224895480-e3424766-2a79-4711-86f2-4091bd05df05.png">
+
 
 In our control trials, a given mutation occured by selecting one of these lists at 1/3 probability each and editing one value within the list. The experimental trials modified the probability of selecting each list for a mutation. In experimental group 1, the probability mutations affecting the limb size and axis was increased to 2/3 while the probability of the other types of mutations were reduced to 1/6 each. In experimental group 2, the probability of changing the joint directions was increased to 2/3 while the other mutation types were smilarly reduced. Likewise, in group 3, the probability of changing the location of the limb placement was increased while other mutations types were reduced.
 
