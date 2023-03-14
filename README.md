@@ -32,6 +32,9 @@ The Evolutionary Algorithm
 
 At the heart of this project is the evolutionary algorithm, which is a process inspired by natural selection. This is contained in the parallelHillClimber.py file. We begin by creating a population of virtual creatures with random bodies and brains. Each step is simulated with fitness being determined by distance from the origin of the virtual environment. Each creature is evaluated based on its ability to achieve locomotion, and if a given creature has a higher fitness value than its parent, it replaces the parent in the population. Below is a graph of the highest fitness value in the population as the number of generations evolved increases.
 
+<img width="629" alt="Screen Shot 2023-03-13 at 4 40 39 PM" src="https://user-images.githubusercontent.com/93502887/224895623-5e7fefb7-7506-49c5-92ac-de43b40c1639.png">
+
+
 My Experiment
 
 The way that robot bodies were mutated was by modifying a random value among three differents lists of random numbers. These numbers would then be used to generate the body of a given robot. The three different lists correspond to the size and axis of each limb, the directions each limb would be placed in, and where on the body each limb was placed. This led to three different possible types of mutations for a given robot. They were grouped this way simply for coding convenience, but it still raised the question-- how does the type of mutation affect the ability of a given population to achieve locomotion?
