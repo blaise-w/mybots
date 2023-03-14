@@ -62,6 +62,8 @@ The Results
 
 In each trial, the same seeds, (the same random numbers) were used. The results are as follows:
 
+Control Group:
+
 <img width="629" alt="Screen Shot 2023-03-13 at 4 40 39 PM" src="https://user-images.githubusercontent.com/93502887/224895623-5e7fefb7-7506-49c5-92ac-de43b40c1639.png">
 
 <img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
