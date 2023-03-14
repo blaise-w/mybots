@@ -41,7 +41,6 @@ At the heart of this project is the evolutionary algorithm, which is a process i
 
 <img width="629" alt="Screen Shot 2023-03-13 at 4 40 39 PM" src="https://user-images.githubusercontent.com/93502887/224895623-5e7fefb7-7506-49c5-92ac-de43b40c1639.png">
 
-
 My Experiment
 
 The way that robot bodies were mutated was by modifying a random value among three differents lists of random numbers. These numbers would then be used to generate the body of a given robot. The three different lists correspond to the size and axis of each limb, the directions each limb would be placed in, and where on the body each limb was placed. This led to three different possible types of mutations for a given robot. They were grouped this way simply for coding convenience, but it still raised the question-- how does the type of mutation affect the ability of a given population to achieve locomotion? This is an important question for understanding evolution itself and could have potential biology applications. (E.g. what types of changes to DNA would most affect a real-life specimen).
@@ -61,7 +60,9 @@ Changing the limb size or its rotational axis is a mutation that is likely to on
 
 The Results
 
-The results of our evolutionary algorithm are impressive. By allowing the creatures to evolve over multiple generations, we can create robots that are increasingly better at achieving locomotion. We can also explore the impact of different parameters on the performance of the creatures, such as the mutation rate, the population size, and the fitness function.
+In each trial, the same seeds, (the same random numbers) were used. The results are as follows:
+
+<img width="629" alt="Screen Shot 2023-03-13 at 4 40 39 PM" src="https://user-images.githubusercontent.com/93502887/224895623-5e7fefb7-7506-49c5-92ac-de43b40c1639.png">
 
 <img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
 
