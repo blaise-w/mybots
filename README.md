@@ -1,4 +1,6 @@
 **need to add abc from canvas
+pickles + explanation to use
+video, gif, results
 
 Evolving Virtual Creatures: An Introduction
 
