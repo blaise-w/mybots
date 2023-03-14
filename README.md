@@ -78,9 +78,13 @@ Group 3:
 
 <img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
 
-We can see that my hypothesis was incorrect-- the group that had higher rates of mutation in the joint axis and size achieved the highest fitness values of all, including those of the control group. It does seem that, as predicted, this group had more consistent success than the other experimental groups at achieving locomotion. However, it also should be noted that the control group had the fewest stationary robots-- ones that had a final fitness value of less than 10. I think that this can be attributed to the diversity of different mutations in the control group. If a robot
+We can see that my hypothesis was incorrect-- the group that had higher rates of mutation in the joint axis and size achieved the highest fitness values of all, including those of the control group. It does seem that, as predicted, this group had more consistent success than the other experimental groups at achieving locomotion. However, it also should be noted that the control group had the fewest stationary robots-- ones that had a final fitness value of less than 10. I think that this can be attributed to the diversity of different mutations in the control group.
 
 Group 3 had some interesting behavior that I predicted in my hypothesis. Group 3 had increased rates of mutation in joint placement. This meant that a single mutation could drastically change the entire structure of the body. We could see this realized in seeds 10 and 3 of group 3, which saw little to no movement and after a single mutation saw their fitness values spike. After these beneficial mutations, their fitness values did not increase any more, meaning that no other beneficial mutation occured.
+
+Group 2 had similar, albeit less drastic patterns. Robots tended to only have a few beneficial mutations over the 1000 generations compared to the control group. This meant that they would see rapid spikes in their fitness, especially in the early generations, followed by a levelling off.
+
+Group 1 looked the most similar to the control group in terms of 
 
 With more time, I'd like to explore various groupings of potential mutation types as well as exploring additional mutations including those to the brain. An area with huge potential for behavioral changes in the creatures is implementing a layered neural network in the brain. Additionally, I'd like to explore how varying mutation rate over time affects the fitness of the population.
 
