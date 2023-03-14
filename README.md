@@ -80,6 +80,8 @@ Group 3:
 
 We can see that my hypothesis was incorrect-- the group that had higher rates of mutation in the joint axis and size achieved the highest fitness values of all, including those of the control group. It does seem that, as predicted, this group had more consistent success than the other experimental groups at achieving locomotion. However, it also should be noted that the control group had the fewest stationary robots-- ones that had a final fitness value of less than 10. I think that this can be attributed to the diversity of different mutations in the control group. If a robot
 
+Group 3 had some interesting behavior that I predicted in my hypothesis. Group 3 had increased rates of mutation in joint placement. This meant that a single mutation could drastically change the entire structure of the body. We could see this realized in seeds 10 and 4
+
 With more time, I'd like to explore various groupings of potential mutation types as well as exploring additional mutations including those to the brain. An area with huge potential for behavioral changes in the creatures is implementing a layered neural network in the brain. Additionally, I'd like to explore how varying mutation rate over time affects the fitness of the population.
 
 Overall, this project provides a fascinating glimpse into the world of evolutionary robotics and the potential for using machine learning to create intelligent and adaptive robots. I hope you find this project as engaging and inspiring as I did, and I encourage you to share it with your friends and colleagues. Let's continue to push the boundaries of what's possible with virtual creatures and evolutionary algorithms!
