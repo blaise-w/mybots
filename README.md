@@ -66,11 +66,17 @@ Control Group:
 
 <img width="629" alt="Screen Shot 2023-03-13 at 4 40 39 PM" src="https://user-images.githubusercontent.com/93502887/224895623-5e7fefb7-7506-49c5-92ac-de43b40c1639.png">
 
-<img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
+Group 1:
+
+<img width="836" alt="Screen Shot 2023-03-14 at 6 37 48 PM" src="https://user-images.githubusercontent.com/93502887/225165747-f5a26f22-d97b-4f65-aca8-86f2e09b8a3e.png">
+
+Group 2:
 
 <img width="816" alt="Screen Shot 2023-03-14 at 6 36 31 PM" src="https://user-images.githubusercontent.com/93502887/225165567-b53cd378-bddf-4e75-a339-49937e0af523.png">
 
-<img width="836" alt="Screen Shot 2023-03-14 at 6 37 48 PM" src="https://user-images.githubusercontent.com/93502887/225165747-f5a26f22-d97b-4f65-aca8-86f2e09b8a3e.png">
+Group 3:
+
+<img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
 
 With more time, I'd like to explore various groupings of potential mutation types as well as exploring additional mutations including those to the brain. An area with huge potential for behavioral changes in the creatures is implementing a layered neural network in the brain. Additionally, I'd like to explore how varying mutation rate over time affects the fitness of the population.
 
