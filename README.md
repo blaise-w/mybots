@@ -63,6 +63,12 @@ The Results
 
 The results of our evolutionary algorithm are impressive. By allowing the creatures to evolve over multiple generations, we can create robots that are increasingly better at achieving locomotion. We can also explore the impact of different parameters on the performance of the creatures, such as the mutation rate, the population size, and the fitness function.
 
+<img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
+
+<img width="816" alt="Screen Shot 2023-03-14 at 6 36 31 PM" src="https://user-images.githubusercontent.com/93502887/225165567-b53cd378-bddf-4e75-a339-49937e0af523.png">
+
+<img width="836" alt="Screen Shot 2023-03-14 at 6 37 48 PM" src="https://user-images.githubusercontent.com/93502887/225165747-f5a26f22-d97b-4f65-aca8-86f2e09b8a3e.png">
+
 With more time, I'd like to explore various groupings of potential mutation types as well as exploring additional mutations including those to the brain. An area with huge potential for behavioral changes in the creatures is implementing a layered neural network in the brain. Additionally, I'd like to explore how varying mutation rate over time affects the fitness of the population.
 
 Overall, this project provides a fascinating glimpse into the world of evolutionary robotics and the potential for using machine learning to create intelligent and adaptive robots. I hope you find this project as engaging and inspiring as I did, and I encourage you to share it with your friends and colleagues. Let's continue to push the boundaries of what's possible with virtual creatures and evolutionary algorithms!
