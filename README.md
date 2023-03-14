@@ -78,6 +78,8 @@ Group 3:
 
 <img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
 
+We can see that my hypothesis was incorrect-- the group that had higher rates of mutation in the joint axis and size achieved the highest fitness values
+
 With more time, I'd like to explore various groupings of potential mutation types as well as exploring additional mutations including those to the brain. An area with huge potential for behavioral changes in the creatures is implementing a layered neural network in the brain. Additionally, I'd like to explore how varying mutation rate over time affects the fitness of the population.
 
 Overall, this project provides a fascinating glimpse into the world of evolutionary robotics and the potential for using machine learning to create intelligent and adaptive robots. I hope you find this project as engaging and inspiring as I did, and I encourage you to share it with your friends and colleagues. Let's continue to push the boundaries of what's possible with virtual creatures and evolutionary algorithms!
