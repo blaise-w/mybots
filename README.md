@@ -39,7 +39,7 @@ At the heart of this project is the evolutionary algorithm, which is a process i
 
 My Experiment
 
-The way that robot bodies were mutated was by modifying a random value among three differents lists of random numbers. These numbers would then be used to generate the body of a given robot. The three different lists correspond to the size and axis of each limb, the directions each limb would be placed in, and where on the body each limb was placed. This led to three different possible types of mutations for a given robot. They were grouped this way simply for coding convenience, but it still raised the question-- how does the type of mutation affect the ability of a given population to achieve locomotion?
+The way that robot bodies were mutated was by modifying a random value among three differents lists of random numbers. These numbers would then be used to generate the body of a given robot. The three different lists correspond to the size and axis of each limb, the directions each limb would be placed in, and where on the body each limb was placed. This led to three different possible types of mutations for a given robot. They were grouped this way simply for coding convenience, but it still raised the question-- how does the type of mutation affect the ability of a given population to achieve locomotion? This is an important question for understanding evolution itself and could have potential biology applications. (E.g. what types of changes to DNA would most affect a real-life specimen).
 
 <img width="678" alt="Screen Shot 2023-03-13 at 11 43 29 PM" src="https://user-images.githubusercontent.com/93502887/224895399-b1bd907a-4317-4390-8b95-f5a9168cff13.png">
 
