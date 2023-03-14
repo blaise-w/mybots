@@ -1,7 +1,9 @@
 Evolving Virtual Creatures: An Introduction
 Are you fascinated by the idea of creating robots that can adapt and evolve on their own? Do you want to learn how to use machine learning techniques to design and optimize robot behaviors? If so, then you're in the right place!
+
 <img width="585" alt="Screen Shot 2023-03-13 at 11 38 12 PM" src="https://user-images.githubusercontent.com/93502887/224894682-cb48da86-af3b-47f5-9c8c-305c177f2b45.png">
 
+<img width="581" alt="Screen Shot 2023-03-13 at 11 38 43 PM" src="https://user-images.githubusercontent.com/93502887/224894741-6822b4a2-2fc8-451f-a230-5274629e6da2.png">
 
 In this project, we explore the world of evolutionary robotics, where we use algorithms inspired by natural selection to evolve virtual creatures that can achieve locomotion. By randomly generating initial populations of robots and allowing them to evolve over multiple generations, we can create robots that are increasingly better at navigating their environments and completing tasks.
 
