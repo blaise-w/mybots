@@ -2,6 +2,9 @@
 pickles + explanation to use
 video, gif, results
 
+
+https://user-images.githubusercontent.com/93502887/225125639-c5f5ea70-3097-472b-b8b9-758dddffaa42.mp4
+
 Evolving Virtual Creatures: An Introduction
 
 Are you fascinated by the idea of creating robots that can adapt and evolve on their own? Do you want to learn how to use machine learning techniques to design and optimize robot behaviors? If so, then you're in the right place!
