@@ -13,6 +13,11 @@ To get started with this project, simply clone the repository and follow the ins
 Generating and Mutating Robots
 To generate the initial population of robots, we use a randomization process that creates a variety of body shapes and sizes. Each robot's body is defined by a set of parameters, such as the length and thickness of its limbs, the size and shape of its each body part, the direction a limb is placed in, and the location of its joints. Bodies are not simply defined to a torso and limbs-- during the generation process, any limb can be placed on any other limb on the body and in any direction and size (so long as it does not intersect or overlap with other limbs. Limbs are color-coded green and blue. A green limb is a sensor neuron and a blue limb is a motor neuron. This is all randomized. The steps for body generation are diagramed below.
 
+<img width="1315" alt="Screen Shot 2023-03-13 at 11 39 48 PM" src="https://user-images.githubusercontent.com/93502887/224894887-40af6ed6-1de2-4923-b83c-94e30c4b1d9d.png">
+
+<img width="646" alt="Screen Shot 2023-03-13 at 11 40 09 PM" src="https://user-images.githubusercontent.com/93502887/224894926-b3bbc2eb-82ed-43a0-a98a-1dc2e9306ad5.png">
+
+
 Sensor neurons feed information to the brain, a neural network that controls its movements. To generate the initial population of neural networks, we use a randomization process that creates a variety of connection weights. The brain relays information to the motor neurons, which fire to change the angle of the limb, allowing for the potential for movement. The brain is evolved by randomly changing weights in each generation, which, as in the body, are maintained in the population if they lead to an increase in fitness. This process runs concurrently with evolutions to the body.
 
 After generating the initial population, we introduce genetic variation by mutating each robot's body. We do this by randomly changing a single value of the body parameters for each member of the population. A given mutation can change the size of a joint, the axis it rotates on, where it is placed, and the direction it is placed in. If this introduces new variations in body structure that lead to improved locomotion, the mutation remains in the population, otherwise no changes are made.
