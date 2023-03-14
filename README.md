@@ -22,6 +22,10 @@ Sensor neurons feed information to the brain, a neural network that controls its
 
 After generating the initial population, we introduce genetic variation by mutating each robot's body. We do this by randomly changing a single value of the body parameters for each member of the population. A given mutation can change the size of a joint, the axis it rotates on, where it is placed, and the direction it is placed in. If this introduces new variations in body structure that lead to improved locomotion, the mutation remains in the population, otherwise no changes are made.
 
+<img width="680" alt="Screen Shot 2023-03-13 at 11 41 03 PM" src="https://user-images.githubusercontent.com/93502887/224895030-268af67b-31c7-45c1-887d-f70b9bda3828.png">
+
+<img width="1282" alt="Screen Shot 2023-03-13 at 11 41 23 PM" src="https://user-images.githubusercontent.com/93502887/224895078-7cb58d27-700b-45db-8867-19b1daedc7a3.png">
+
 The Evolutionary Algorithm
 At the heart of this project is the evolutionary algorithm, which is a process inspired by natural selection. This is contained in the parallelHillClimber.py file. We begin by creating a population of virtual creatures with random bodies and brains. Each step is simulated with fitness being determined by distance from the origin of the virtual environment. Each creature is evaluated based on its ability to achieve locomotion, and if a given creature has a higher fitness value than its parent, it replaces the parent in the population. Below is a graph of the highest fitness value in the population as the number of generations evolved increases.
 
