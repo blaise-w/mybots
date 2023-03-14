@@ -1,4 +1,5 @@
 Evolving Virtual Creatures: An Introduction
+
 Are you fascinated by the idea of creating robots that can adapt and evolve on their own? Do you want to learn how to use machine learning techniques to design and optimize robot behaviors? If so, then you're in the right place!
 
 <img width="585" alt="Screen Shot 2023-03-13 at 11 38 12 PM" src="https://user-images.githubusercontent.com/93502887/224894682-cb48da86-af3b-47f5-9c8c-305c177f2b45.png">
