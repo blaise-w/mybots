@@ -10,8 +10,8 @@ phaseOffsetBL = -20
 amplitudeFrontleg = pi/4
 frequencyFrontleg = 5
 phaseOffsetFrontleg = -20
-numberOfGenerations = 100
-populationSize = 5
+numberOfGenerations = 1000
+populationSize = 10
 
 
 numLinks = 4
