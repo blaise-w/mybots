@@ -10,6 +10,11 @@ Are you fascinated by the idea of creating robots that can adapt and evolve on t
 
 In this project, we explore the world of evolutionary robotics, where we use algorithms inspired by natural selection to evolve virtual creatures that can achieve locomotion. By randomly generating initial populations of robots and allowing them to evolve over multiple generations, we can create robots that are increasingly better at navigating their environments and completing tasks.
 
+An example ludobot:
+
+<img width="311" alt="Screen Shot 2023-02-14 at 6 58 59 PM" src="https://user-images.githubusercontent.com/93502887/225201904-c82fe67f-fb72-42f9-8c24-1ca0dc27a51a.png">
+
+
 Getting Started
 
 To get started with this project, simply clone the repository and follow the instructions in the README file. You'll need to have access to a computer with the necessary software installed (e.g., Python, Pybullet, Pyrosim, etc.) and preferrably some basic knowledge of programming concepts like data structures, algorithms, and machine learning. To run my code, simply run the search.py file. You may also want to specify the "numberOfGenerations" and "populationSize" variables in the constants.py file, which correspond to the number of times we select for a robot with better fitness, and the number of different random robots we have in each generation. These are defaulted at 1000 generations and 10 robots. If you'd like to use some of my best robots, their body and brain files are included as the only body and brain files in this repository. To use them, simply edit the code in the create_body() and create_brain() functions of solution.py to use the files and run the simulation with one generation and one population size.
@@ -30,12 +35,6 @@ After generating the initial population, we introduce genetic variation by mutat
 
 <img width="1282" alt="Screen Shot 2023-03-13 at 11 41 23 PM" src="https://user-images.githubusercontent.com/93502887/224895078-7cb58d27-700b-45db-8867-19b1daedc7a3.png">
 
-Some additional example mutations:
-
-[Blaise Notes 2.pdf](https://github.com/blaise-w/mybots/files/10975806/Blaise.Notes.2.pdf)
-
-[Blaise Notes 4.pdf](https://github.com/blaise-w/mybots/files/10975809/Blaise.Notes.4.pdf)
-
 The Evolutionary Algorithm
 
 At the heart of this project is the evolutionary algorithm, which is a process inspired by natural selection. This is contained in the parallelHillClimber.py file. We begin by creating a population of virtual creatures with random bodies and brains. Each step is simulated with fitness being determined by distance from the origin of the virtual environment. Each creature is evaluated based on its ability to achieve locomotion, and if a given creature has a higher fitness value than its parent, it replaces the parent in the population.
@@ -54,7 +53,6 @@ The way that robot bodies were mutated was by modifying a random value among thr
 
 <img width="579" alt="Screen Shot 2023-03-13 at 11 44 17 PM" src="https://user-images.githubusercontent.com/93502887/224895480-e3424766-2a79-4711-86f2-4091bd05df05.png">
 
-
 In our control trials, a given mutation occured by selecting one of these lists at 1/3 probability each and editing one value within the list. The experimental trials modified the probability of selecting each list for a mutation. In experimental group 1, the probability mutations affecting the limb size and axis was increased to 2/3 while the probability of the other types of mutations were reduced to 1/6 each. In experimental group 2, the probability of changing the joint directions was increased to 2/3 while the other mutation types were smilarly reduced. Likewise, in group 3, the probability of changing the location of the limb placement was increased while other mutations types were reduced.
 
 For each of the four groups, 10 simulations were run, each having 10 creatures in the population and evolving over 1000 generations. This is a total of 400,000 simulated robots.
@@ -62,6 +60,12 @@ For each of the four groups, 10 simulations were run, each having 10 creatures i
 My Hypothesis
 
 Changing the limb size or its rotational axis is a mutation that is likely to only affect a single limb-- even if the mutated limb has another limb coming from it, that limb will stay in relatively the same place. However, for mutations that affect the placement and direction of a limb, this may affect the structure of the entire creature. My hypothesis is that groups 1 and 2 will mutate faster and achieve much more variance in their fitness values, while group 3 will be much more consistent. I think that groups 1 and 2 will achieve the highest fitness values, but will, on average, have lower fitness values than the control group and group 3.
+
+Some pictures showing how these mutations can affect multiple limbs:
+
+[Blaise Notes 2.pdf](https://github.com/blaise-w/mybots/files/10975806/Blaise.Notes.2.pdf)
+
+[Blaise Notes 4.pdf](https://github.com/blaise-w/mybots/files/10975809/Blaise.Notes.4.pdf)
 
 The Results
 
@@ -97,7 +101,9 @@ With more time, I'd also like to explore various groupings of potential mutation
 
 Overall, this project provides a fascinating glimpse into the world of evolutionary robotics and the potential for using machine learning to create intelligent and adaptive robots. I hope you find this project as engaging and inspiring as I did, and I encourage you to share it with your friends and colleagues. Let's continue to push the boundaries of what's possible with virtual creatures and evolutionary algorithms!
 
+My recap video (where you can see what my bots look like in action):
 
+https://www.youtube.com/watch?v=hDSuEjI6goI
 
 Resources:
 
