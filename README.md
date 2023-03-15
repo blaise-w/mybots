@@ -1,7 +1,4 @@
-**need to add abc from canvas
 pickles + explanation to use
-video, results
-
 
 https://user-images.githubusercontent.com/93502887/225125639-c5f5ea70-3097-472b-b8b9-758dddffaa42.mp4
 
