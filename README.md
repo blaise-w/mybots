@@ -1,8 +1,6 @@
-pickles + explanation to use
+Evolving Virtual Creatures: An Introduction
 
 https://user-images.githubusercontent.com/93502887/225125639-c5f5ea70-3097-472b-b8b9-758dddffaa42.mp4
-
-Evolving Virtual Creatures: An Introduction
 
 Are you fascinated by the idea of creating robots that can adapt and evolve on their own? Do you want to learn how to use machine learning techniques to design and optimize robot behaviors? If so, then you're in the right place!
 
@@ -14,7 +12,7 @@ In this project, we explore the world of evolutionary robotics, where we use alg
 
 Getting Started
 
-To get started with this project, simply clone the repository and follow the instructions in the README file. You'll need to have access to a computer with the necessary software installed (e.g., Python, Pybullet, Pyrosim, etc.) and preferrably some basic knowledge of programming concepts like data structures, algorithms, and machine learning. To run my code, simply run the search.py file. You may also want to specify the "numberOfGenerations" and "populationSize" variables in the constants.py file, which correspond to the number of times we select for a robot with better fitness, and the number of different random robots we have in each generation. These are defaulted at 1000 generations and 10 robots.
+To get started with this project, simply clone the repository and follow the instructions in the README file. You'll need to have access to a computer with the necessary software installed (e.g., Python, Pybullet, Pyrosim, etc.) and preferrably some basic knowledge of programming concepts like data structures, algorithms, and machine learning. To run my code, simply run the search.py file. You may also want to specify the "numberOfGenerations" and "populationSize" variables in the constants.py file, which correspond to the number of times we select for a robot with better fitness, and the number of different random robots we have in each generation. These are defaulted at 1000 generations and 10 robots. If you'd like to use some of my best robots, their body and brain files are included as the only body and brain files in this repository. To use them, simply edit the code in the create_body() and create_brain() functions of solution.py to use the files and run the simulation with one generation and one population size.
 
 Generating and Mutating Robots
 
