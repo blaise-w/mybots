@@ -30,9 +30,19 @@ After generating the initial population, we introduce genetic variation by mutat
 
 <img width="1282" alt="Screen Shot 2023-03-13 at 11 41 23 PM" src="https://user-images.githubusercontent.com/93502887/224895078-7cb58d27-700b-45db-8867-19b1daedc7a3.png">
 
+Some additional example mutations:
+
+[Blaise Notes 2.pdf](https://github.com/blaise-w/mybots/files/10975806/Blaise.Notes.2.pdf)
+
+[Blaise Notes 4.pdf](https://github.com/blaise-w/mybots/files/10975809/Blaise.Notes.4.pdf)
+
 The Evolutionary Algorithm
 
-At the heart of this project is the evolutionary algorithm, which is a process inspired by natural selection. This is contained in the parallelHillClimber.py file. We begin by creating a population of virtual creatures with random bodies and brains. Each step is simulated with fitness being determined by distance from the origin of the virtual environment. Each creature is evaluated based on its ability to achieve locomotion, and if a given creature has a higher fitness value than its parent, it replaces the parent in the population. Below is a example graph of the highest fitness value in the population as the number of generations evolved increases.
+At the heart of this project is the evolutionary algorithm, which is a process inspired by natural selection. This is contained in the parallelHillClimber.py file. We begin by creating a population of virtual creatures with random bodies and brains. Each step is simulated with fitness being determined by distance from the origin of the virtual environment. Each creature is evaluated based on its ability to achieve locomotion, and if a given creature has a higher fitness value than its parent, it replaces the parent in the population.
+
+[Blaise Notes (1).pdf](https://github.com/blaise-w/mybots/files/10975800/Blaise.Notes.1.pdf)
+
+Below is a example graph of the highest fitness value in the population as the number of generations evolved increases.
 
 <img width="629" alt="Screen Shot 2023-03-13 at 4 40 39 PM" src="https://user-images.githubusercontent.com/93502887/224895623-5e7fefb7-7506-49c5-92ac-de43b40c1639.png">
 
@@ -86,6 +96,8 @@ Based on the data, I would recommend evolving the robots with the 1/3, 1/3, 1/3 
 With more time, I'd also like to explore various groupings of potential mutation types as well as exploring additional mutations including those to the brain. An area with huge potential for behavioral changes in the creatures is implementing a layered neural network in the brain.
 
 Overall, this project provides a fascinating glimpse into the world of evolutionary robotics and the potential for using machine learning to create intelligent and adaptive robots. I hope you find this project as engaging and inspiring as I did, and I encourage you to share it with your friends and colleagues. Let's continue to push the boundaries of what's possible with virtual creatures and evolutionary algorithms!
+
+
 
 Resources:
 
