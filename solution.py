@@ -4,12 +4,13 @@ import os
 import random
 import time
 import constants as c
+import pickle
 
 class SOLUTION:
     def __init__(self, nextAvailableID):
         self.myID = nextAvailableID
         self.weights = numpy.random.rand(c.numSensorNeurons,c.numMotorNeurons) * 2 - 1
-        random.seed(2)
+        random.seed(5)
         self.sizeAndAxis = [random.random() for i in range(21)]
         self.directions = [random.randint(1, 5) for i in range(4)]
         self.adds = [random.randint(0, i) for i in range(3)]
@@ -48,16 +49,16 @@ class SOLUTION:
         randomRow = random.randint(0, c.numSensorNeurons -1)
         randomColumn = random.randint(0, c.numMotorNeurons - 1)
         self.weights[randomRow,randomColumn] = random.random() * 2 - 1
-        r = random.randint(1, 3)
+        r = random.randint(1, 6)
         if r == 1:
-            index = random.randint(0, 20)
-            self.sizeAndAxis[index] = random.random()
-        elif r == 2:
             index = random.randint(0, 3)
             self.directions[index] = random.randint(1, 5)
-        else:
+        elif r == 2:
             index = random.randint(0, 2)
             self.adds[index] = random.randint(0, index)
+        else:
+            index = random.randint(0, 20)
+            self.sizeAndAxis[index] = random.random()
            
 
     def Create_Body(self, ID):

@@ -15,6 +15,7 @@ class PARALLEL_HILL_CLIMBER:
             val = solution.SOLUTION(self.nextAvailableID)
             self.nextAvailableID += 1
             self.parents[key] = val
+        self.yvals = []
         
         
     def Evolve(self):
@@ -35,6 +36,12 @@ class PARALLEL_HILL_CLIMBER:
         # else:
         #     self.child.Evaluate("DIRECT")
         # print("\n" + str(self.parent.fitness) + " " + str(self.child.fitness))
+
+        lowest = 999999999999999
+        for key in self.parents:
+            if self.parents[key].fitness < lowest:
+                lowest = self.parents[key].fitness
+        self.yvals.append(-lowest)
 
         self.Select()
         
@@ -66,8 +73,12 @@ class PARALLEL_HILL_CLIMBER:
             if self.parents[key].fitness < lowest:
                 lowest = self.parents[key].fitness
                 best = self.parents[key]
-        #print(best.legweights)
+        
         best.Start_Simulation("GUI", True)
+
+        f = open("seed.txt", "w")
+        f.write(str(self.yvals))
+        f.close()
 
     def Evaluate(self, solutions):
         for parent in solutions:
