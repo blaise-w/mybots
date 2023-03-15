@@ -87,6 +87,8 @@ Group 3:
 
 <img width="843" alt="Screen Shot 2023-03-14 at 6 34 58 PM" src="https://user-images.githubusercontent.com/93502887/225165390-61b3487b-2046-4814-a3cb-606e713ee8c9.png">
 
+Feel free to check out this data in the plot.py file!
+
 We can see that my hypothesis was incorrect-- the group that had higher rates of mutation in the joint axis and size achieved the highest fitness values of all, including those of the control group. Also refuting my hypothesis were the varying fitness values in this group (Group 1). I had expected the mutations in this group to lead to the most consistent evolution. The control group had the most consistent evolution and the fewest stationary robots-- ones that had a final fitness value of less than 10. I think that this can be attributed to the diversity of different mutations in the control group.
 
 Group 3 had some interesting behavior that I did predict in my hypothesis. Group 3 had increased rates of mutation in joint placement. This meant that a single mutation could drastically change the entire structure of the body. We could see this realized in seeds 10 and 3 of group 3, which saw little to no movement and after a single mutation saw their fitness values spike. After these beneficial mutations, their fitness values did not increase any more, meaning that no other beneficial mutation occured.
